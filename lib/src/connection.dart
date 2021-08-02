@@ -415,13 +415,13 @@ abstract class _PostgreSQLExecutionContextMixin
   Future<PostgreSQLResult> query(
     String fmtString, {
     Map<String, dynamic>? substitutionValues,
-    bool? allowReuse = true,
+    bool? allowReuse,
     int? timeoutInSeconds,
   }) =>
       _query(
         fmtString,
         substitutionValues: substitutionValues,
-        allowReuse: allowReuse!,
+        allowReuse: allowReuse ?? true,
         timeoutInSeconds: timeoutInSeconds,
       );
 
